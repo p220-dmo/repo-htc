@@ -14,9 +14,32 @@ public class RunItLiza {
 		
 		
 		// ** Circle
-		Ellipse e = new Ellipse(2.0, 4.0);
+		Ellipse e = new Ellipse(2.0, 2.0);
 		Circle c = new Circle(2.0);
-
+		System.out.println(" Aire de e : " + e.area());
+		System.out.println(" Aire de c : " + c.area());
+		
+		System.out.println("============");
+		System.out.println(e instanceof Circle);
+		System.out.println(e instanceof Ellipse);
+		System.out.println(c instanceof Circle);
+		System.out.println(c instanceof Ellipse);
+		System.out.println("============");
+		System.out.println(e instanceof Object);
+		System.out.println(c instanceof Object);
+		System.out.println("============");
+		c.getRadius();
+		
+		e = c;
+		System.out.println(e instanceof Circle);
+		System.out.println(e instanceof Ellipse);
+		
+		c = e; 
+		
+		
+		
+		
+		
 	}
 
 }
