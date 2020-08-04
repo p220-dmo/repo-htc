@@ -1,6 +1,6 @@
 package fr.htc.heritage.person;
 
-class Personne {
+public class Personne {
 	String nom;
 	int anneeNaissance;
 
