@@ -23,14 +23,12 @@ public class Member {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	
+
 	private String generateMatricule() {
 		return null;
 	}
 
 	// **** getters and setters
-
-
 
 	public String getMatricule() {
 		return matricule;
