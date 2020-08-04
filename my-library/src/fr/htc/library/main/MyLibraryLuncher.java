@@ -9,7 +9,7 @@ public class MyLibraryLuncher {
 		
 		Book book1  = new Book("Nedjma", "Kateb yacine", 1985);
 		Book book2  = new Book("Nedjma", "Kateb yacine", 1985);
-		Book book3  = new Book("Nedjma", "Kateb yacine", 1985);
+		Book book3  = new Book("l'alchimiste", "paulo coello", 1994);
 		Book book4  = new Book("Nedjma", "Kateb yacine", 1985);
 		Book book5  = new Book("Nedjma", "Kateb yacine", 1985);
 		Book book6  = new Book("Nedjma", "Kateb yacine", 1985);
@@ -62,7 +62,6 @@ public class MyLibraryLuncher {
 		System.out.println(member9 .getMatricule());
 		System.out.println(member10.getMatricule());
 		System.out.println(member11.getMatricule());
-		
 
 	}
 
