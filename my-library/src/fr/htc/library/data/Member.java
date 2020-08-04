@@ -19,9 +19,9 @@ public class Member {
 	}
 
 	public Member(String firstName, String lastName) {
-		this.matricule = this.generateMatricule();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.matricule = this.generateMatricule();
 		}
 
 	private String generateMatricule() {
