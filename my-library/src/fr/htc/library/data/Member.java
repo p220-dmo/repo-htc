@@ -22,7 +22,7 @@ public class Member {
 		this.matricule = this.generateMatricule();
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
+		}
 
 	private String generateMatricule() {
 		return null;
@@ -31,8 +31,12 @@ public class Member {
 	// **** getters and setters
 
 	public String getMatricule() {
+		String matricule = lastName.toUpperCase().substring(0, 1) 
+				+firstName.toUpperCase().substring(0, 1) 
+				+matSeq++;
 		return matricule;
 	}
+	
 
 	public String getFirstName() {
 		return firstName;
