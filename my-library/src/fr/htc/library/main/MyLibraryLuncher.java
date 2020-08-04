@@ -39,8 +39,29 @@ public class MyLibraryLuncher {
 		System.out.println(book14.getCote());
 		System.out.println(book15.getCote());
 		
-		Member member  = new Member ("Yacine", "SEGHOUANE");
-		System.out.println(member.getMatricule());
+		Member member1   = new Member ("Yacine", "SEGHOUANE");
+		Member member2   = new Member ("Djamel", "mouchene");
+		Member member3   = new Member ("Ali", "SEGHOUANE");
+		Member member4   = new Member ("Yacine", "SEGHOUANE");
+		Member member5   = new Member ("Yacine", "SEGHOUANE");
+		Member member6   = new Member ("Yacine", "SEGHOUANE");
+		Member member7   = new Member ("Yacine", "SEGHOUANE");
+		Member member8   = new Member ("Yacine", "SEGHOUANE");
+		Member member9   = new Member ("Yacine", "SEGHOUANE");
+		Member member10  = new Member ("Yacine", "SEGHOUANE");
+		Member member11  = new Member ("Yacine", "SEGHOUANE");
+		
+		System.out.println(member1 .getMatricule());
+		System.out.println(member2 .getMatricule());
+		System.out.println(member3 .getMatricule());
+		System.out.println(member4 .getMatricule());
+		System.out.println(member5 .getMatricule());
+		System.out.println(member6 .getMatricule());
+		System.out.println(member7 .getMatricule());
+		System.out.println(member8 .getMatricule());
+		System.out.println(member9 .getMatricule());
+		System.out.println(member10.getMatricule());
+		System.out.println(member11.getMatricule());
 		
 
 	}
