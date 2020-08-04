@@ -19,8 +19,9 @@ public class Book {
 	}
 
 	private String generateCote() {
-		// TODO Cette doit être implémentée
-		return "" + Book.coteSeq;
+		String cote = this.author.substring(0, 2).toUpperCase() + this.editionYear%100 + "-" + coteSeq++;
+		
+		return cote;
 	}
 
 	// *** gettes & setters
