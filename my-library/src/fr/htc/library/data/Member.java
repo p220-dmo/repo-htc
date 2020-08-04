@@ -8,7 +8,6 @@ public class Member {
 	private int age;
 
 	// **** constructors
-
 	public Member() {
 
 	}
@@ -19,13 +18,18 @@ public class Member {
 	}
 
 	public Member(String firstName, String lastName) {
-		this.matricule = this.generateMatricule();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.matricule = this.generateMatricule();
 	}
 	
 	private String generateMatricule() {
-		return null;
+		String matricule = this.firstName
+				.substring(0, 1)
+				.toUpperCase() 
+		+ this.lastName.substring(0, 1).toUpperCase() + matSeq++;
+		
+		return matricule;
 	}
 
 	// **** getters and setters

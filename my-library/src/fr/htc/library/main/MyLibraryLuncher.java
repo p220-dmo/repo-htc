@@ -1,6 +1,7 @@
 package fr.htc.library.main;
 
 import fr.htc.library.data.Book;
+import fr.htc.library.data.Member;
 
 public class MyLibraryLuncher {
 
@@ -38,8 +39,8 @@ public class MyLibraryLuncher {
 		System.out.println(book14.getCote());
 		System.out.println(book15.getCote());
 		
-		
-		
+		Member member  = new Member ("Yacine", "SEGHOUANE");
+		System.out.println(member.getMatricule());
 		
 
 	}
