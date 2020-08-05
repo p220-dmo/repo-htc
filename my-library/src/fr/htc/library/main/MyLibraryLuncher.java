@@ -1,11 +1,48 @@
 package fr.htc.library.main;
 
-import fr.htc.library.data.Book;
-import fr.htc.library.data.Member;
+import fr.htc.library.dao.Storage;
+import fr.htc.library.services.BookService;
+import fr.htc.library.services.CheckoutService;
+import fr.htc.library.services.MemberService;
+import fr.htc.library.services.impl.BookServiceImpl;
+import fr.htc.library.services.impl.CheckoutServiceImpl;
+import fr.htc.library.services.impl.MemberServiceImpl;
 
 public class MyLibraryLuncher {
+	private static MemberService memberService = new MemberServiceImpl();
+	private static BookService bookService = new BookServiceImpl();
+	private static CheckoutService checkoutService = new CheckoutServiceImpl();
 
 	public static void main(String[] args) {
+		
+		memberService.addMember("Djamel", "MOUCHENE", 37);
+		memberService.addMember("Liza", "SEGOUANE", 28);
+		memberService.addMember("Raouf", "RETIMA", 39);
+		System.out.println(Storage.getMemberDB().keySet());
+
+		
+		
+		bookService.addBook("Nedjma", "Kateb yacine", 1985);
+		bookService.addBook("L'Alcjimiste", "Paolo Cohlo", 1994);
+		bookService.addBook("Le fils du pauvre", "Mouloud FERAOUNE", 1985);
+		bookService.addBook("Leon l'africain", "Amine Maalouf", 1985);
+		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
+		System.out.println(Storage.getBookDB().keySet());
+		
+		checkoutService.checkout("DM100", "MO85-12");
+		checkoutService.checkout("DM100", "KA85-10");
+		checkoutService.checkout("DM100", "PA94-11");
+		
+		checkoutService.checkout("DM100", "AM85-13");
+
+		checkoutService.checkIn("DM100", "PA94-11");
+		
+		checkoutService.checkout("DM100", "AM85-13");
+		
+		
+		
+		
+		/*
 		
 		Book book1  = new Book("Nedjma", "Kateb yacine", 1985);
 		Book book2  = new Book("Nedjma", "Kateb yacine", 1985);
@@ -64,7 +101,7 @@ public class MyLibraryLuncher {
 		System.out.println(member9);
 		System.out.println(member10);
 		System.out.println(member11);
-
+*/
 	}
 
 }

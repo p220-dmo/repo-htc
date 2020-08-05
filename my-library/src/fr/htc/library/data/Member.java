@@ -1,11 +1,17 @@
 package fr.htc.library.data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Member {
+	private static final int MAX_CHECKOUT_BOOK = 3;
+
 	private static int matSeq = 100;
 	private String matricule;
 	private String firstName;
 	private String lastName;
 	private int age;
+	private List<Book> borrowedBooks = new ArrayList<Book>();
 
 	// **** constructors
 	public Member() {
@@ -23,28 +29,21 @@ public class Member {
 		this.matricule = this.generateMatricule();
 	}
 
-
 	private String generateMatricule() {
-		String matricule = this.firstName
-				.substring(0, 1)
-				.toUpperCase() 
-		+ this.lastName.substring(0, 1).toUpperCase() + matSeq++;
-		
+		String matricule = this.firstName.substring(0, 1).toUpperCase() + this.lastName.substring(0, 1).toUpperCase()
+				+ matSeq++;
+
 		return matricule;
 	}
 
 	// **** getters and setters
 
-	public String getMatricule() {
-		String matricule = lastName.toUpperCase().substring(0, 1) 
-				+firstName.toUpperCase().substring(0, 1) 
-				+matSeq++;
-		return matricule;
-	}
-	
-
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public String getMatricule() {
+		return matricule;
 	}
 
 	public void setFirstName(String firstName) {
@@ -67,12 +66,33 @@ public class Member {
 		this.age = age;
 	}
 
+	public List<Book> getBorrowedBooks() {
+		return borrowedBooks;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [matricule=" + matricule + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
 				+ "]";
 	}
-	
-	
+
+	public boolean canCheckout() {
+		if (this.borrowedBooks.size() < MAX_CHECKOUT_BOOK) {
+			return true;
+		}
+		return false;
+	}
+
+	public void removeBook(Book book) {
+		Book toRemove = null;
+		for (Book elt : borrowedBooks) {
+			if (elt.getCote().equals(book.getCote())) {
+				toRemove = elt;
+				break;
+			}
+		}
+		borrowedBooks.remove(toRemove);
+
+	}
 
 }

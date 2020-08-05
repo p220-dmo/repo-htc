@@ -9,7 +9,7 @@ public interface CheckoutService {
 	public boolean checkout(String matricule, String cote);
 	
 	public List<Book> getAvailableBooks();
-	
-	public boolean canMemberCheckoutYet(String matricule);
 
+	public boolean checkIn(String matricule, String cote);
+	
 }

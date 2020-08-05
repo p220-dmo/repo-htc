@@ -6,6 +6,8 @@ public class Book {
 	private String title;
 	private String author;
 	private int editionYear;
+	private Member borrower;
+
 
 	// *** Constructors
 	public Book() {
@@ -54,9 +56,23 @@ public class Book {
 		return cote;
 	}
 
+	public Member getBorrower() {
+		return borrower;
+	}
+
+	public void setBorrower(Member borrower) {
+		this.borrower = borrower;
+	}
 	@Override
 	public String toString() {
 		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", editionYear=" + editionYear + "]";
+	}
+
+	public boolean isAvailable() {
+		if(this.borrower == null) {
+			return true;
+		}
+		return false;
 	}
 	
 }
