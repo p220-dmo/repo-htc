@@ -20,7 +20,7 @@ public class Book {
 
 	private String generateCote() {
 		String cote = this.author.substring(0, 2).toUpperCase() + this.editionYear%100 + "-" + coteSeq++;
-		
+
 		return cote;
 	}
 

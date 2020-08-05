@@ -22,23 +22,7 @@ public class MyLibraryLuncher {
 		Book book13 = new Book("Nedjma", "Kateb yacine", 1985);
 		Book book14 = new Book("Nedjma", "Kateb yacine", 1985);
 		Book book15 = new Book("Nedjma", "Kateb yacine", 1985);
-		
-		System.out.println(book1.getCote());
-		System.out.println(book2.getCote());
-		System.out.println(book3.getCote());
-		System.out.println(book4.getCote());
-		System.out.println(book5.getCote());
-		System.out.println(book6.getCote());
-		System.out.println(book7.getCote());
-		System.out.println(book8.getCote());
-		System.out.println(book9.getCote());
-		System.out.println(book10.getCote());
-		System.out.println(book11.getCote());
-		System.out.println(book12.getCote());
-		System.out.println(book13.getCote());
-		System.out.println(book14.getCote());
-		System.out.println(book15.getCote());
-		
+
 		Member member1   = new Member ("Yacine", "SEGHOUANE");
 		Member member2   = new Member ("Djamel", "mouchene");
 		Member member3   = new Member ("Ali", "SEGHOUANE");
@@ -51,17 +35,35 @@ public class MyLibraryLuncher {
 		Member member10  = new Member ("Yacine", "SEGHOUANE");
 		Member member11  = new Member ("Yacine", "SEGHOUANE");
 		
-		System.out.println(member1 .getMatricule());
-		System.out.println(member2 .getMatricule());
-		System.out.println(member3 .getMatricule());
-		System.out.println(member4 .getMatricule());
-		System.out.println(member5 .getMatricule());
-		System.out.println(member6 .getMatricule());
-		System.out.println(member7 .getMatricule());
-		System.out.println(member8 .getMatricule());
-		System.out.println(member9 .getMatricule());
-		System.out.println(member10.getMatricule());
-		System.out.println(member11.getMatricule());
+
+		
+		System.out.println(book1);
+		System.out.println(book2);
+		System.out.println(book3);
+		System.out.println(book4);
+		System.out.println(book5);
+		System.out.println(book6);
+		System.out.println(book7);
+		System.out.println(book8);
+		System.out.println(book9);
+		System.out.println(book10);
+		System.out.println(book11);
+		System.out.println(book12);
+		System.out.println(book13);
+		System.out.println(book14);
+		System.out.println(book15);
+		
+		System.out.println(member1);
+		System.out.println(member2);
+		System.out.println(member3);
+		System.out.println(member4);
+		System.out.println(member5);
+		System.out.println(member6);
+		System.out.println(member7);
+		System.out.println(member8);
+		System.out.println(member9);
+		System.out.println(member10);
+		System.out.println(member11);
 
 	}
 
