@@ -67,4 +67,12 @@ public class Member {
 		this.age = age;
 	}
 
+	@Override
+	public String toString() {
+		return "Member [matricule=" + matricule + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
+				+ "]";
+	}
+	
+	
+
 }
