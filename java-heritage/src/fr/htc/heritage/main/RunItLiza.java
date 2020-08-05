@@ -34,7 +34,8 @@ public class RunItLiza {
 		System.out.println(e instanceof Circle);
 		System.out.println(e instanceof Ellipse);
 		
-		c = e; 
+		c = (Circle) e; 
+		
 		
 		
 		
