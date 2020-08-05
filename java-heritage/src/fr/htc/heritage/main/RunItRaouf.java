@@ -16,7 +16,6 @@ public class RunItRaouf {
 		// ** Circle
 		Ellipse e = new Ellipse(2.0, 4.0);
 		Circle c = new Circle(2.0);
-
 	}
 
 }
