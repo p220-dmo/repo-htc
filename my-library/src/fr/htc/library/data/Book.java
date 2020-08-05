@@ -54,4 +54,10 @@ public class Book {
 		return cote;
 	}
 
+	@Override
+	public String toString() {
+		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", editionYear=" + editionYear + "]";
+	}
+
+	
 }

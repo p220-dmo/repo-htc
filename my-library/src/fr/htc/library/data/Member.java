@@ -36,6 +36,12 @@ public class Member {
 
 
 
+	@Override
+	public String toString() {
+		return "Member [matricule=" + matricule + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
+				+ "]";
+	}
+
 	public String getMatricule() {
 		return matricule;
 	}
