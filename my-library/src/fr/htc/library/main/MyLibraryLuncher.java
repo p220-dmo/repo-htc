@@ -1,5 +1,7 @@
 package fr.htc.library.main;
 
+import java.util.List;
+
 import fr.htc.library.dao.Storage;
 import fr.htc.library.services.BookService;
 import fr.htc.library.services.CheckoutService;
@@ -27,6 +29,11 @@ public class MyLibraryLuncher {
 		bookService.addBook("Le fils du pauvre", "Mouloud FERAOUNE", 1985);
 		bookService.addBook("Leon l'africain", "Amine Maalouf", 1985);
 		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
+		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
+		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
+		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
+		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
+		bookService.addBook("L'incendie", "Mohamed DIB", 1985);
 		System.out.println(Storage.getBookDB().keySet());
 		
 		checkoutService.checkout("DM100", "MO85-12");
@@ -39,8 +46,17 @@ public class MyLibraryLuncher {
 		
 		checkoutService.checkout("DM100", "AM85-13");
 		
+		for (String cote : checkoutService.getAvailableCotes()) {
+			System.out.println("Avant : "  + cote);
+		}
 		
-		
+		checkoutService.checkout("RR102" , checkoutService.getAvailableCotes().get(0));
+		checkoutService.checkout("RR102" , checkoutService.getAvailableCotes().get(0));
+		checkoutService.checkout("RR102" , checkoutService.getAvailableCotes().get(0));
+		checkoutService.checkout("LS101" , checkoutService.getAvailableCotes().get(0));
+		checkoutService.checkout("LS101" , checkoutService.getAvailableCotes().get(0));
+		checkoutService.checkout("LS101" , checkoutService.getAvailableCotes().get(0));
+		checkoutService.checkout("LS101" , checkoutService.getAvailableCotes().get(0));
 		
 		/*
 		

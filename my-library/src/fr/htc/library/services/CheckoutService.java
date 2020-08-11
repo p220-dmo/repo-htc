@@ -11,5 +11,9 @@ public interface CheckoutService {
 	public List<Book> getAvailableBooks();
 
 	public boolean checkIn(String matricule, String cote);
+
+	public List<Book> getUnvailableBooks();
+
+	public List<String> getAvailableCotes();
 	
 }
