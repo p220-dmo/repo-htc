@@ -17,12 +17,15 @@ public class Habitation {
 		return this.area * TARIF_IMPOT_METRE_CARRE;
 	}
 
+	@Override
+	public String toString() {
+		return "Habitation [owner=" + owner + ", address=" + address + ", area=" + area + "]";
+	}
+
 	public void print() {
-		
 		System.out.println(" ********* Owner : " + this.owner + "  ********* ");
 		System.out.println("Address : " + this.address);
 		System.out.println("Area	: " + this.area + " m2");
-		System.out.println("Taxe	: " + this.impot() + " €");
 	}
 
 	public String getOwner() {
@@ -47,12 +50,6 @@ public class Habitation {
 
 	public void setArea(double area) {
 		this.area = area;
-	}
-
-	@Override
-	public String toString() {
-		this.print();
-		return "";
 	}
 
 }
