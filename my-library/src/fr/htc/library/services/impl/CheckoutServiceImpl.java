@@ -1,5 +1,6 @@
 package fr.htc.library.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.htc.library.dao.BookDao;
@@ -31,7 +32,12 @@ public class CheckoutServiceImpl implements CheckoutService {
 
 	@Override
 	public List<Book> getAvailableBooks() {
-		return null;
+		return bookDao.findAvailableBooks();
+	}
+
+	@Override
+	public List<Book> getUnvailableBooks() {
+		return bookDao.findUnvailableBooks();
 	}
 
 	@Override
@@ -39,14 +45,24 @@ public class CheckoutServiceImpl implements CheckoutService {
 		Member member = memberDao.findMemberByMatricule(matricule);
 		Book book = bookDao.findBookByCote(cote);
 
-		if (book.getBorrower().getMatricule() == member.getMatricule() 
-				&& member.getBorrowedBooks().contains(book)) {
+		if (book.getBorrower().getMatricule() == member.getMatricule() && member.getBorrowedBooks().contains(book)) {
 			book.setBorrower(null);
 			member.removeBook(book);
 			return true;
 		}
 		return false;
 
+	}
+
+	@Override
+	public List<String> getAvailableCotes() {
+		List<String> availableCotes = new ArrayList<String>();
+		
+		for (Book book : this.getAvailableBooks()) {
+			availableCotes.add(book.getCote());
+		}
+
+		return availableCotes;
 	}
 
 }
