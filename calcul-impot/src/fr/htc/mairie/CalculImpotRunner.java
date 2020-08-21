@@ -35,7 +35,8 @@ public class CalculImpotRunner {
 		for (Habitation habitation : habitations) {
 			System.out.println(habitation);
 			System.out.println("\t ==> TAXE = " + habitation.impot() + " €");
-			System.out.println("\t ==> ===================");
+			System.out.println("\t ==> ==================="
+					+ "");
 		}
 		
 	}
