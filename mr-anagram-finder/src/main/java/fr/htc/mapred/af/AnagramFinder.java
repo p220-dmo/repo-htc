@@ -21,7 +21,9 @@ public class AnagramFinder {
 	 *
 	 */
 	public static class AnagramMapper extends Mapper<LongWritable, Text, Text, Text> {
-
+		private Text sortedText = new Text();
+		private Text outputValue = new Text();
+		
 		protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
 		}
@@ -33,7 +35,8 @@ public class AnagramFinder {
 	 *
 	 */
 	public static class AnagramReducer extends Reducer<Text, Text, IntWritable, Text> {
-
+		private IntWritable count = new IntWritable();
+		private Text outputValue = new Text();
 		protected void reduce(Text key, Iterable<Text> values, Context context)
 				throws IOException, InterruptedException {
 		
