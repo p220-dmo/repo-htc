@@ -21,11 +21,19 @@ public class AnagramFinder {
 	 *
 	 */
 	public static class AnagramMapper extends Mapper<LongWritable, Text, Text, Text> {
-		private Text sortedText = new Text();
-		private Text outputValue = new Text();
+		private Text sortedWordKey = new Text();
+		private Text wordValue = new Text();
 		
 		protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
+			//implémeneter le methode map : identifier la clé et la valeur
+			// clé : le mort ordonné
+			// value : le mot
+			//value est une ligne de notre fichier ==> un mot du dictionnaire
+			
+			//trier le mot et le mettre le resultat dans : sortedWordKey
+			
+			//ajouter une pair (Key, Value) au contexte
+			 context.write(sortedWordKey, wordValue);
 		}
 	}
 
@@ -35,14 +43,22 @@ public class AnagramFinder {
 	 *
 	 */
 	public static class AnagramReducer extends Reducer<Text, Text, IntWritable, Text> {
+		
 		private IntWritable count = new IntWritable();
 		private Text outputValue = new Text();
-		protected void reduce(Text key, Iterable<Text> values, Context context)
-				throws IOException, InterruptedException {
+		
+		protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+
 		
 		}
 
 	}
+	
+	
+	
+	
+	
+	
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws InterruptedException, IOException, ClassNotFoundException {
