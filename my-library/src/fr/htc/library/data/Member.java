@@ -42,12 +42,12 @@ public class Member {
 		return firstName;
 	}
 
-	public String getMatricule() {
-		return matricule;
-	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public String getMatricule() {
+		return matricule;
 	}
 
 	public String getLastName() {

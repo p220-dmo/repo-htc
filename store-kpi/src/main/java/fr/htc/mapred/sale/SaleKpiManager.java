@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -20,20 +20,30 @@ public class SaleKpiManager {
 	 * @author dmouchene
 	 *
 	 */
-	public static class SaleMapper extends Mapper<LongWritable, Text, Text, Text> {
-
+	public static class SaleMapper extends Mapper<LongWritable, Text, Text, FloatWritable> {
 		
+		private static final String CSV_FILE_SEPARATOR = ";";
+		private static final int STORE_ID_CSV_INDEX = 4;
+		private static final int STORE_SALE_CSV_INDEX = 5;
+		private static final int UNIT_SALE_CSV_INDEX = 7;
+
 		protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 			//Value represente une ligne CSV
+			String[] colunms = value.toString().split(CSV_FILE_SEPARATOR);
+			
+			Text storeIdKey = new Text(colunms[STORE_ID_CSV_INDEX]);
+			
+			Float storeSale = Float.valueOf(colunms[STORE_SALE_CSV_INDEX]);
+			Float unitSale = Float.valueOf(colunms[UNIT_SALE_CSV_INDEX]);
+			FloatWritable caValue = new FloatWritable(storeSale * unitSale);
+			
 			//implémeneter le methode map : identifier la clé et la valeur
 			// clé : store id
-			// value : le mot
 			//value = stores_sale * sales_unit
 			
-			//trier le mot et le mettre le resultat dans : sortedWordKey
 			
 			//ajouter une pair (Key, Value) au contexte
-			 context.write(null, null);
+			 context.write(storeIdKey, caValue);
 		}
 	}
 
@@ -42,13 +52,14 @@ public class SaleKpiManager {
 	 * @author dmouchene
 	 *
 	 */
-	public static class SaleReducer extends Reducer<Text, Text, IntWritable, Text> {
+	public static class SaleReducer extends Reducer<Text, FloatWritable, Text, FloatWritable> {
 		
-
-		
-		protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-
-		
+		protected void reduce(Text key, Iterable<FloatWritable> values, Context context) throws IOException, InterruptedException {
+			Float sum = Float.valueOf(0);
+			for (FloatWritable ca : values) {
+				sum+= ca.get();
+			}
+			context.write(key, new FloatWritable(sum));
 		}
 
 	}
@@ -75,7 +86,7 @@ public class SaleKpiManager {
 		job.setReducerClass(SaleReducer.class);
 
 		job.setMapOutputKeyClass(Text.class);
-		job.setMapOutputValueClass(Text.class);
+		job.setMapOutputValueClass(FloatWritable.class);
 
 		System.exit(job.waitForCompletion(true) ? 0 : 1);
 
