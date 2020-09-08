@@ -1,0 +1,6 @@
+fr\htc\library\services\CheckoutService.class
+fr\htc\library\services\impl\BookServiceImpl.class
+fr\htc\library\services\MemberService.class
+fr\htc\library\services\BookService.class
+fr\htc\library\services\impl\CheckoutServiceImpl.class
+fr\htc\library\services\impl\MemberServiceImpl.class
