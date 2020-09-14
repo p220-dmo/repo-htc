@@ -20,8 +20,7 @@ public class HabitationIndividuelle extends Habitation {
 
 	@Override
 	public double impot() {
-		return super.impot() 
-				+ this.roomCount * TARIF_IMPOT_PER_ROOM
+		return super.impot() + this.roomCount * TARIF_IMPOT_PER_ROOM
 				+ (this.getHaveSwimingPool() == true ? TARIF_IMPOT_SWIMING_POOL : 0.0);
 	}
 
@@ -40,5 +39,21 @@ public class HabitationIndividuelle extends Habitation {
 	public void setHaveSwimingPool(boolean haveSwimingPool) {
 		this.haveSwimingPool = haveSwimingPool;
 	}
+
+	@Override
+	public void print() {
+		super.print();
+		System.out.println("Romm Count 		  : " + this.roomCount);
+		System.out.println("Have Swiming Pool : " + this.haveSwimingPool);
+		System.out.println("Taxe	: " + this.impot() + " €");
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() +  "\n\tHabitationIndividuelle [roomCount=" + roomCount + ", haveSwimingPool=" + haveSwimingPool + "]";
+	}
+	
+	
+
 
 }
