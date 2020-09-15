@@ -25,6 +25,7 @@ public class SaleKpiManager {
 		private static final String CSV_FILE_SEPARATOR = ";";
 		private static final int STORE_ID_CSV_INDEX = 4;
 		private static final int STORE_SALE_CSV_INDEX = 5;
+		private static final int STORE_COST_CSV_INDEX = 6;
 		private static final int UNIT_SALE_CSV_INDEX = 7;
 
 		protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
@@ -35,7 +36,8 @@ public class SaleKpiManager {
 			
 			Float storeSale = Float.valueOf(colunms[STORE_SALE_CSV_INDEX]);
 			Float unitSale = Float.valueOf(colunms[UNIT_SALE_CSV_INDEX]);
-			FloatWritable caValue = new FloatWritable(storeSale * unitSale);
+			Float storeCost = Float.valueOf(colunms[STORE_COST_CSV_INDEX]);
+			FloatWritable caValue = new FloatWritable((storeSale - storeCost) * unitSale );
 			
 			//implémeneter le methode map : identifier la clé et la valeur
 			// clé : store id

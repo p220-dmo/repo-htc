@@ -45,7 +45,7 @@ public class WordCount {
       
       while (tokensIterator.hasMoreTokens()) {
     	 
-    	  wordKey.set(tokensIterator.nextToken().t);
+    	  wordKey.set(tokensIterator.nextToken());
     	  context.write(wordKey, oneValue);
       }
     }
