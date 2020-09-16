@@ -8,8 +8,8 @@ import fr.htc.library.data.Member;
 
 public class Storage {
 	
-	private static Map<String, Member> memberDB = new HashMap<>();
-	private static Map<String, Book> bookDB = new HashMap<>();
+	private static Map<String, Member> memberDB = new HashMap<String, Member>();
+	private static Map<String, Book> bookDB = new HashMap<String, Book>();
 	
 	public static Map<String, Member> getMemberDB() {
 		return memberDB;
