@@ -14,7 +14,6 @@ public class BookServiceImpl implements BookService {
 	public void addBook(String title, String author, int editionYear) {
 		Book book = new Book(title, author, editionYear);
 		bookDao.save(book);
-
 	}
 
 	public Book findBookByCote(String cote) {

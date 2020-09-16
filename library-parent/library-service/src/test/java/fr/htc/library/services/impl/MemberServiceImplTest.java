@@ -1,55 +1,54 @@
 package fr.htc.library.services.impl;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+import fr.htc.library.dao.Storage;
+import fr.htc.library.services.MemberService;
+
+
+@RunWith(JUnit4.class)
 public class MemberServiceImplTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
+	private MemberService memberServiceImpl = new MemberServiceImpl() ;
 
 	@Test
-	@Ignore
 	public final void testAddMember() {
-//		fail("Not yet implemented"); // TODO toto
-		
+		final String firstName = "Djamel";
+		final String lastName = "MOUCHENE";
+		final int age = 37;
+
+
+		Assert.assertTrue("The data base should be empty", !Storage.getMemberDB().isEmpty());
+		fail("Not yet implemented");
+		memberServiceImpl.addMember(firstName, lastName, age);
+
+		assertNull("should be null", new Integer("5"));
+
 	}
 
 	@Test
 	public final void testFindMemberByMatricule() {
-//		fail("Not yet implemented"); // TODO
+		//		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public final void testGetAllMembers() {
-//		fail("Not yet implemented"); // TODO
+		//		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public final void testDeleteMember() {
-//		fail("Not yet implemented"); // TODO
+		//		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
 	public final void testUpdate() {
-//		fail("Not yet implemented"); // TODO: add log management
+		//		fail("Not yet implemented"); // TODO: add log management
 	}
 
 }

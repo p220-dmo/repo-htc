@@ -13,12 +13,11 @@ public class MemberServiceImpl implements MemberService {
 
 	public void addMember(String firstName, String lastName, int age) {
 		if(firstName == null || lastName == null){
-			System.err.println("Missing mandatory params..");
-			return;
+			throw new IllegalArgumentException("First name and Last name are mandatory...");
 		}
 		if("".equals(firstName)  || "".equals(lastName)){
 			System.err.println("Empty string is not not a valid parmas");
-			return;
+			throw new IllegalArgumentException("First name and Last name are mandatory...");
 		}
 		
 		Member member = new Member(firstName, lastName, age);
