@@ -1,0 +1,5 @@
+fr\htc\library\dao\BookDao.class
+fr\htc\library\dao\impls\BookDaoMapImp.class
+fr\htc\library\dao\Storage.class
+fr\htc\library\dao\impls\MemberDaoMapImp.class
+fr\htc\library\dao\MemberDao.class
