@@ -10,7 +10,6 @@
   	<dependency>
   		<groupId>fr.htc.library</groupId>
   		<artifactId>library-service</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
 </project>

@@ -6,7 +6,6 @@ import fr.htc.library.dao.MemberDao;
 import fr.htc.library.dao.Storage;
 import fr.htc.library.data.Member;
 import fr.htc.library.matricule.exception.MatriculeMandatoryException;
-import fr.htc.library.utils.exceptions.CoteMandatoryException;
 
 public class MemberDaoMapImp implements MemberDao {
 
