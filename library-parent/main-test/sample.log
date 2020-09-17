@@ -1,0 +1,10 @@
+2020-09-17 14:37:04 MyLibraryLuncher [INFO] [DM100, RR102, LS101]
+2020-09-17 14:37:04 MyLibraryLuncher [INFO] [MO85-12, KA85-10, PA94-11, AM85-13]
+2020-09-17 14:37:04 CheckoutServiceImpl [INFO] No mapping member with the matricule : DM00
+2020-09-17 14:37:13 MyLibraryLuncher [INFO] [DM100, RR102, LS101]
+2020-09-17 14:37:13 MyLibraryLuncher [INFO] [MO85-12, KA85-10, PA94-11, AM85-13]
+2020-09-17 14:37:13 CheckoutServiceImpl [INFO] No member found with matricule : ||
+fr.htc.library.matricule.exception.MatriculeMandatoryException: Null is not a valid matricule
+	at fr.htc.library.dao.impls.MemberDaoMapImp.findMemberByMatricule(MemberDaoMapImp.java:19)
+	at fr.htc.library.services.impl.CheckoutServiceImpl.checkout(CheckoutServiceImpl.java:32)
+	at fr.htc.library.main.MyLibraryLuncher.main(MyLibraryLuncher.java:35)
