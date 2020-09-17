@@ -1,0 +1,36 @@
+{
+  "datasets" : [ {
+    "id_dataset" : 1,
+    "data_last_updated" : 1600367337640,
+    "files" : {
+      "number_of_files" : 2,
+      "files" : [ {
+        "id" : 1,
+        "name" : "file_name_1",
+        "path" : "hdfs://xxx.yy.z/temp1",
+        "save_date" : 1600367337638
+      }, {
+        "id" : 2,
+        "name" : "file_name_2",
+        "path" : "hdfs://xxx.yy.z/temp2",
+        "save_date" : 1600367337638
+      } ]
+    },
+    "db_datas" : {
+      "number_of_dbdatas" : 2,
+      "db_datas" : [ {
+        "id" : 1,
+        "table_name" : "table_name_1",
+        "columns" : [ "column_1", "column_2", "column_3" ],
+        "rows_range" : [ 1000, 2000 ],
+        "save_date" : 1600367337638
+      }, {
+        "id" : 2,
+        "table_name" : "table_name_2",
+        "columns" : [ "column_1", "column_2", "column_3" ],
+        "rows_range" : [ 1000, 2000 ],
+        "save_date" : 1600367337638
+      } ]
+    }
+  } ]
+}

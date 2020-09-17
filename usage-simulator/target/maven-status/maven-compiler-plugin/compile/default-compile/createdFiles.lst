@@ -1,0 +1,8 @@
+com\cib\arise\usage\JubRunner.class
+com\cib\arise\usage\beans\DataSets.class
+com\cib\arise\usage\beans\DataSet.class
+com\cib\arise\usage\JsonProducer.class
+com\cib\arise\usage\beans\DbDatas.class
+com\cib\arise\usage\beans\Files.class
+com\cib\arise\usage\beans\File.class
+com\cib\arise\usage\beans\DbData.class
