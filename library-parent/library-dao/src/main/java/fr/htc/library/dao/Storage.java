@@ -7,18 +7,30 @@ import fr.htc.library.data.Book;
 import fr.htc.library.data.Member;
 
 public class Storage {
-	
+	/**
+	 * 
+	 */
 	private static Map<String, Member> memberDB = new HashMap<String, Member>();
+	/**
+	 * 
+	 */
 	private static Map<String, Book> bookDB = new HashMap<String, Book>();
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Member> getMemberDB() {
 		return memberDB;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Book> getBookDB() {
 		return bookDB;
 	}
-	
 
-	
 
 }

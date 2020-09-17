@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
-	private static final int MAX_CHECKOUT_BOOK = 3;
+	public static final int MAX_CHECKOUT_BOOK = 3;
 
 	private static int matSeq = 100;
 	private String matricule;

@@ -4,14 +4,27 @@
   <artifactId>library-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <description>	
-</description>
   <modules>
+  	<module>library-web</module>
+  	<module>library-dao</module>
   	<module>library-data</module>
   	<module>library-service</module>
-  	<module>library-dao</module>
-  	<module>library-utiles</module>
-  	<module>library-main</module>
-  	<module>library-web</module>
+  	<module>library-utils</module>
+  	<module>main-test</module>
   </modules>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-log4j12</artifactId>
+  	</dependency>
+  </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.slf4j</groupId>
+  			<artifactId>slf4j-log4j12</artifactId>
+  			<version>1.7.16</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
