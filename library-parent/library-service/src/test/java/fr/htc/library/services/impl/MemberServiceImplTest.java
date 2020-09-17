@@ -23,11 +23,11 @@ public class MemberServiceImplTest {
 		final int age = 37;
 
 
-		Assert.assertTrue("The data base should be empty", !Storage.getMemberDB().isEmpty());
-		fail("Not yet implemented");
+		Assert.assertTrue("The data base should be empty", Storage.getMemberDB().isEmpty());
+		//fail("Not yet implemented");
 		memberServiceImpl.addMember(firstName, lastName, age);
 
-		assertNull("should be null", new Integer("5"));
+	//assertNull("should be null", new Integer("5"));
 
 	}
 

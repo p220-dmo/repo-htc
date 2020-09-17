@@ -31,7 +31,7 @@ public class Member {
 
 	private String generateMatricule() {
 		String matricule = this.firstName.substring(0, 1).toUpperCase() + this.lastName.substring(0, 1).toUpperCase()
-				+ matSeq;
+				+ matSeq++;
 
 		return matricule;
 	}

@@ -23,12 +23,10 @@ public class BookDaoMapImp implements BookDao {
 	 * @throws CoteMandatoryException
 	 */
 	public Book findBookByCote(String cote) throws CoteMandatoryException {
-		StringUtils.substring(cote, 1, 5);
 		if(StringUtils.isBlank(cote)){
-			throw new CoteMandatoryException("Null is not a valid cote");
+			throw new CoteMandatoryException("Null or Empty is not a valid cote");
 		}
 		return Storage.getBookDB().get(cote);
-		
 	}
 
 	public List<Book> findAvailableBooks() {
